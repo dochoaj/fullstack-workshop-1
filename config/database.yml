@@ -48,6 +48,4 @@ test:
 #
 production:
   <<: *default
-  database: workshop_production
-  username: workshop
-  password: <%= ENV['WORKSHOP_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
