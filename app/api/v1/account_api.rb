@@ -1,6 +1,6 @@
 module V1
   class AccountApi < Grape::API
-    use V1::Middleware::TokenAuthenticable
+    # use V1::Middleware::TokenAuthenticable
     
     resource :accounts do
       desc 'Fetch all accounts'
