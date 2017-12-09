@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :accounts
   has_many :movements
+
+  def generate_token
+    ::JsonWebToken.encode(user_id: id)
+  end
 end

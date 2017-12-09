@@ -16,4 +16,10 @@ class Account < ApplicationRecord
     a.save
     a
   end
+
+  def self.destroy_with_params(params)
+    a = Account.find_by(id: params[:id])
+    a.delete
+    a
+  end
 end

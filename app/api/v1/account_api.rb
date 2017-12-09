@@ -1,7 +1,9 @@
 module V1
   class AccountApi < Grape::API
+    use V1::Middleware::TokenAuthenticable
+    
     resource :accounts do
-      desc 'Get all accounts'
+      desc 'Fetch all accounts'
       get do
         present Account.all, with: Entities::AccountEntity
       end
@@ -26,8 +28,13 @@ module V1
         present account, with: Entities::AccountEntity
       end
 
+      desc 'Destroys an account'
+      params do
+        requires :id, type: Integer, desc: 'Account id.'
+      end
       delete do
-        # Account.destroy_with_params(params)
+        account = Account.destroy_with_params(params)
+        present account, with: Entities::AccountEntity
       end
     end
   end

@@ -54,7 +54,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Flexible authentication solution for Rails with Warden.
 gem 'devise', '4.3.0'
+# A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard.
+gem 'jwt', '2.1.0'
 # An opinionated framework for creating REST-like APIs in Ruby.
 gem 'grape', '1.0.1'
 # An API focused facade that sits on top of an object model.
 gem 'grape-entity', '0.6.1'
+# Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
+gem 'rack-cors', '1.0.2'
